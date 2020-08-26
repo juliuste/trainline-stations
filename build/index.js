@@ -14,7 +14,7 @@ const build = async () => {
 			if (value === 't') return true // @todo
 			if (value === 'f') return false // @todo
 			return value
-		}
+		},
 	})
 	return stations
 }

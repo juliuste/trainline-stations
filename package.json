@@ -1,7 +1,7 @@
 {
 	"name": "trainline-stations",
-	"description": "List of european railway stations.",
 	"version": "1.0.2",
+	"description": "List of european railway stations.",
 	"keywords": [
 		"trainline",
 		"railway",
@@ -11,37 +11,37 @@
 		"station",
 		"stations"
 	],
-	"author": "Julius Tens <mail@juliustens.eu>",
 	"homepage": "https://github.com/juliuste/trainline-stations",
-	"repository": "juliuste/trainline-stations",
 	"bugs": "https://github.com/juliuste/trainline-stations/issues",
+	"repository": "juliuste/trainline-stations",
+	"license": "ODbL",
+	"author": "Julius Tens <mail@juliustens.eu>",
 	"main": "./data.json",
 	"files": [
 		"data.json"
 	],
-	"devDependencies": {
-		"csv-parse": "^4.4.1",
-		"depcheck": "^0.7.2",
-		"eslint": "^5.16.0",
-		"eslint-config-standard": "^12.0.0",
-		"eslint-plugin-import": "^2.17.2",
-		"eslint-plugin-node": "^9.0.1",
-		"eslint-plugin-promise": "^4.1.1",
-		"eslint-plugin-standard": "^4.0.0",
-		"got": "^9.6.0",
-		"tape": "^4.10.1",
-		"tape-promise": "^4.0.0"
-	},
 	"scripts": {
 		"build": "node build/index > data.json",
 		"check-deps": "depcheck",
-		"lint": "eslint build test.js",
 		"fix": "eslint --fix build test.js",
-		"test": "npm run lint && npm run check-deps && npm run build && node test",
-		"prepublishOnly": "npm test"
+		"lint": "eslint build test.js",
+		"prepublishOnly": "npm test",
+		"test": "npm run lint && npm run check-deps && npm run build && node test"
+	},
+	"devDependencies": {
+		"csv-parse": "^4.12.0",
+		"depcheck": "^1.2.0",
+		"eslint": "^7.7.0",
+		"eslint-config-standard": "^14.1.1",
+		"eslint-plugin-import": "^2.22.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-standard": "^4.0.1",
+		"got": "^11.5.2",
+		"tape": "^5.0.1",
+		"tape-promise": "^4.0.0"
 	},
 	"engines": {
-		"node": ">=8"
-	},
-	"license": "ODbL"
+		"node": ">=10"
+	}
 }
