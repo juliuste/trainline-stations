@@ -3,8 +3,8 @@
 List of european railway stations. Wrapper module for [**trainline-eu/stations**](https://github.com/trainline-eu/stations).
 
 [![npm version](https://img.shields.io/npm/v/trainline-stations.svg)](https://www.npmjs.com/package/trainline-stations)
-[![Build Status](https://travis-ci.org/juliuste/trainline-stations.svg?branch=master)](https://travis-ci.org/juliuste/trainline-stations)
-[![chat on gitter](https://badges.gitter.im/juliuste.svg)](https://gitter.im/juliuste)
+[![License](https://img.shields.io/github/license/juliuste/trainline-stations.svg?style=flat)](license)
+[![Contact me](https://img.shields.io/badge/contact-email-turquoise)](mailto:mail@juliustens.eu)
 
 ## Installation
 
