@@ -10,4 +10,4 @@ shrinkwrap.yaml
 pnpm-lock.yaml
 dist
 
-/data.json
+src/static.js

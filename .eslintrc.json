@@ -1,5 +1,6 @@
 {
     "extends": "standard",
+    "ignorePatterns": ["**/static.js"],
     "rules": {
         "comma-dangle": [
             "error",

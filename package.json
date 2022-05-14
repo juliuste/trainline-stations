@@ -16,32 +16,35 @@
 	"repository": "juliuste/trainline-stations",
 	"license": "ODbL",
 	"author": "Julius Tens <mail@juliustens.eu>",
-	"main": "./data.json",
+	"main": "src/index.js",
 	"files": [
-		"data.json"
+		"src/*.js",
+		"!src/*.test.js"
 	],
+	"type": "module",
 	"scripts": {
-		"build": "node build/index > data.json",
+		"build-static": "node -e \"/* todo: this is really ugly, use json output again once json modules are stable in node */ import('./src/index.js').then(async lib => lib.collect(lib.default())).then(stations => { process.stdout.write('export default ' + JSON.stringify(stations, null, 2) + '\\n') }).catch(error => { console.error(error); process.exit(1) })\" > src/static.js",
 		"check-deps": "depcheck",
-		"fix": "eslint --fix build test.js",
-		"lint": "eslint build test.js",
+		"lint": "eslint src",
+		"fix": "npm run lint -- --fix",
 		"prepublishOnly": "npm test",
-		"test": "npm run lint && npm run check-deps && npm run build && node test"
+		"test": "npm run lint && npm run check-deps && npm run build-static && ava"
 	},
 	"devDependencies": {
-		"csv-parse": "^4.12.0",
-		"depcheck": "^1.2.0",
-		"eslint": "^7.7.0",
-		"eslint-config-standard": "^14.1.1",
-		"eslint-plugin-import": "^2.22.0",
-		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-standard": "^4.0.1",
-		"got": "^11.5.2",
-		"tape": "^5.0.1",
-		"tape-promise": "^4.0.0"
+		"ava": "^4.2.0",
+		"csv-parse": "^5.0.4",
+		"depcheck": "^1.4.3",
+		"eslint": "^8.15.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-n": "^15.2.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"got": "^12.0.4"
 	},
 	"engines": {
-		"node": ">=10"
+		"node": ">=14"
+	},
+	"ava": {
+		"timeout": "1m"
 	}
 }
